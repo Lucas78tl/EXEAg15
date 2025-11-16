@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.Resultado"
+             Title="Resultado"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+
+        <Frame Padding="10"
+               Margin="10">
+
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="{Binding ENE}"
+                       FontSize="30"
+                       HorizontalOptions="Center" />
+
+                <Frame>
+
+                    <VerticalStackLayout>
+
+                        <HorizontalStackLayout>
+
+                            <Label Text="Numeros de participantes: "/>
+                            <Label Text="{Binding ENP}"/>
+
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            
+                            <Label Text="Custo por pessoa: "/>
+                            <Label Text="{Binding ECP}"/>
+                            
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            
+                            <Label Text="Custo total do evento: "/>
+                            <Label Text="{Binding ValorTotal}"/>
+                            
+                        </HorizontalStackLayout>
+
+                        <VerticalStackLayout>
+
+                            <Label Text="Local do Evento:"/>
+                            <Label Text="{Binding ELEvento}"/>
+
+                        </VerticalStackLayout>
+
+                        <Grid ColumnDefinitions="*, *, *"
+                              RowDefinitions="Auto, Auto">
+
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="Check-in: "/>
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="Check-out: "/>
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text="Estadia "/>
+
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   Text="{Binding  DataCheckin, StringFormat='{}{0:dd/MM/yyyy}' }"/>
+                            <Label Grid.Row="1" Grid.Column="1"
+                                   Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}' }"/>
+                            <Label Grid.Row="1" Grid.Column="2"
+                                   Text="{Binding Estadia}"/>
+
+                        </Grid>
+
+                    </VerticalStackLayout>
+                    
+                </Frame>
+                <Button Text="Voltar"
+                        Clicked="Button_Clicked"/>
+            </VerticalStackLayout>
+            
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

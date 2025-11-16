@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.index"
+             Title="index"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        
+        <Label Text="index"
+               FontSize="40"
+               HorizontalOptions="Center" />
+        
+        <Frame Padding="10"
+               Margin="10">
+            
+            <VerticalStackLayout Spacing="10">
+
+                <Frame>
+
+                    <VerticalStackLayout>
+
+                        <Label Text="Nome do Evento:" x:Name="NEvento"/>
+                        <Entry x:Name="ENEvento"/>
+                        <Label Text="Número de participantes" x:Name="NP"/>
+                        <Entry x:Name="ENP"/>
+                        <Label Text="Local do Evento" x:Name="LE"/>
+                        <Entry x:Name="ELE"/>
+                        <Label Text="Custo por Pessoa" x:Name="CP"/>
+                        <Entry x:Name="ECP"/>
+
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <Frame>
+
+                    <VerticalStackLayout>
+
+                        <HorizontalStackLayout>
+
+                            <Label Text="Check-in: "/>
+                            <DatePicker x:Name="DataCheckin"
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="DataCheckin_DateSelected"/>
+
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+
+                            <Label Text="Check-out: "/>
+                            <DatePicker x:Name="DataCheckout"
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="DataCheckout_DateSelected"/>
+
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </Frame>
+                <Button Text="Avançar" Clicked="Button_Clicked"/>
+
+            </VerticalStackLayout>
+            
+        </Frame>
+               
+    </VerticalStackLayout>
+</ContentPage>
