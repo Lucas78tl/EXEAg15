@@ -3,65 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.Views.index"
              Title="index"
-             NavigationPage.HasNavigationBar="False">
-    <VerticalStackLayout>
-        
-        <Label Text="index"
-               FontSize="40"
-               HorizontalOptions="Center" />
-        
-        <Frame Padding="10"
-               Margin="10">
-            
-            <VerticalStackLayout Spacing="10">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F2F2F2">
 
-                <Frame>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-                    <VerticalStackLayout>
+            <Label Text="Index"
+                   FontSize="40"
+                   HorizontalOptions="Center"
+                   TextColor="#000000" />
 
-                        <Label Text="Nome do Evento:" x:Name="NEvento"/>
-                        <Entry x:Name="ENEvento"/>
-                        <Label Text="Número de participantes" x:Name="NP"/>
-                        <Entry x:Name="ENP"/>
-                        <Label Text="Local do Evento" x:Name="LE"/>
-                        <Entry x:Name="ELE"/>
-                        <Label Text="Custo por Pessoa" x:Name="CP"/>
-                        <Entry x:Name="ECP"/>
+            <Frame Padding="20"
+                   CornerRadius="15"
+                   BackgroundColor="#FFFFFF"
+                   HasShadow="True">
 
-                    </VerticalStackLayout>
+                <VerticalStackLayout Spacing="20">
 
-                </Frame>
+                    <Frame BackgroundColor="#EFEFEF" CornerRadius="10" Padding="15">
 
-                <Frame>
+                        <VerticalStackLayout Spacing="10">
 
-                    <VerticalStackLayout>
+                            <Label Text="Nome do Evento:" TextColor="#000000"/>
+                            <Entry x:Name="ENEvento" TextColor="#000000"/>
 
-                        <HorizontalStackLayout>
+                            <Label Text="Número de Participantes:" TextColor="#000000"/>
+                            <Entry x:Name="ENP" Keyboard="Numeric" TextColor="#000000"/>
 
-                            <Label Text="Check-in: "/>
-                            <DatePicker x:Name="DataCheckin"
-                                        Format="dd/MM/yyyy"
-                                        DateSelected="DataCheckin_DateSelected"/>
+                            <Label Text="Local do Evento:" TextColor="#000000"/>
+                            <Entry x:Name="ELE" TextColor="#000000"/>
 
-                        </HorizontalStackLayout>
+                            <Label Text="Custo por Pessoa:" TextColor="#000000"/>
+                            <Entry x:Name="ECP" Keyboard="Numeric" TextColor="#000000"/>
 
-                        <HorizontalStackLayout>
+                        </VerticalStackLayout>
 
-                            <Label Text="Check-out: "/>
-                            <DatePicker x:Name="DataCheckout"
-                                        Format="dd/MM/yyyy"
-                                        DateSelected="DataCheckout_DateSelected"/>
+                    </Frame>
 
-                        </HorizontalStackLayout>
+                    <Frame BackgroundColor="#EFEFEF" CornerRadius="10" Padding="15">
 
-                    </VerticalStackLayout>
+                        <VerticalStackLayout Spacing="15">
 
-                </Frame>
-                <Button Text="Avançar" Clicked="Button_Clicked"/>
+                            <HorizontalStackLayout>
+                                <Label Text="Check-in:" TextColor="#000000"/>
+                                <DatePicker x:Name="DataCheckin"
+                                            Format="dd/MM/yyyy"
+                                            DateSelected="DataCheckin_DateSelected"
+                                            TextColor="#000000"/>
+                            </HorizontalStackLayout>
 
-            </VerticalStackLayout>
-            
-        </Frame>
-               
-    </VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Check-out:" TextColor="#000000"/>
+                                <DatePicker x:Name="DataCheckout"
+                                            Format="dd/MM/yyyy"
+                                            DateSelected="DataCheckout_DateSelected"
+                                            TextColor="#000000"/>
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                    <Button Text="Avançar"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#4A90E2"
+                            TextColor="#FFFFFF"
+                            CornerRadius="10"
+                            HeightRequest="50"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>

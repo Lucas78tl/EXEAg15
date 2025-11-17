@@ -5,6 +5,12 @@
 
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
+    <Color x:Key="card">#0F4571</Color>
+    <Color x:Key="card2">#4682B4</Color>
+    <Color x:Key="fundo">#1E90FF</Color>
+    <Color x:Key="botao">#05D3F8</Color>
+    <Color x:Key="letra">#009DDD</Color>
+
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>

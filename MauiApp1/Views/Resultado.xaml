@@ -3,77 +3,93 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.Views.Resultado"
              Title="Resultado"
-             NavigationPage.HasNavigationBar="False">
-    <VerticalStackLayout>
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F2F2F2">
 
-        <Frame Padding="10"
-               Margin="10">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-            <VerticalStackLayout Spacing="10">
+            <Frame Padding="20"
+                   Margin="0"
+                   CornerRadius="15"
+                   BackgroundColor="#FFFFFF"
+                   HasShadow="True">
 
-                <Label Text="{Binding ENE}"
-                       FontSize="30"
-                       HorizontalOptions="Center" />
+                <VerticalStackLayout Spacing="20">
 
-                <Frame>
+                    <Label Text="{Binding ENE}"
+                           FontSize="30"
+                           HorizontalOptions="Center"
+                           TextColor="#000000" />
 
-                    <VerticalStackLayout>
+                    <Frame BackgroundColor="#EFEFEF"
+                           CornerRadius="10"
+                           Padding="15">
 
-                        <HorizontalStackLayout>
+                        <VerticalStackLayout Spacing="15">
 
-                            <Label Text="Numeros de participantes: "/>
-                            <Label Text="{Binding ENP}"/>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Número de participantes:" TextColor="#000000"/>
+                                <Label Text="{Binding ENP}" TextColor="#000000"/>
+                            </HorizontalStackLayout>
 
-                        </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Custo por pessoa:" TextColor="#000000"/>
+                                <Label Text="{Binding ECP}" TextColor="#000000"/>
+                            </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
-                            
-                            <Label Text="Custo por pessoa: "/>
-                            <Label Text="{Binding ECP}"/>
-                            
-                        </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Custo total:" TextColor="#000000"/>
+                                <Label Text="{Binding ValorTotal}" TextColor="#000000"/>
+                            </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
-                            
-                            <Label Text="Custo total do evento: "/>
-                            <Label Text="{Binding ValorTotal}"/>
-                            
-                        </HorizontalStackLayout>
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Local do Evento:" TextColor="#000000"/>
+                                <Label Text="{Binding ELEvento}" TextColor="#000000"/>
+                            </VerticalStackLayout>
 
-                        <VerticalStackLayout>
+                            <Frame BackgroundColor="#FFFFFF"
+                                   CornerRadius="8"
+                                   Padding="10">
 
-                            <Label Text="Local do Evento:"/>
-                            <Label Text="{Binding ELEvento}"/>
+                                <Grid ColumnDefinitions="*,*,*"
+                                      RowDefinitions="Auto,Auto"
+                                      ColumnSpacing="5">
+
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Check-in:" TextColor="#000000"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="Check-out:" TextColor="#000000"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="Estadia" TextColor="#000000"/>
+
+                                    <Label Grid.Row="1" Grid.Column="0"
+                                           Text="{Binding DataCheckin, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                           TextColor="#000000"/>
+                                    <Label Grid.Row="1" Grid.Column="1"
+                                           Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                           TextColor="#000000"/>
+                                    <Label Grid.Row="1" Grid.Column="2"
+                                           Text="{Binding Estadia}"
+                                           TextColor="#000000"/>
+
+                                </Grid>
+
+                            </Frame>
 
                         </VerticalStackLayout>
 
-                        <Grid ColumnDefinitions="*, *, *"
-                              RowDefinitions="Auto, Auto">
+                    </Frame>
 
-                            <Label Grid.Row="0" Grid.Column="0"
-                                   Text="Check-in: "/>
-                            <Label Grid.Row="0" Grid.Column="1"
-                                   Text="Check-out: "/>
-                            <Label Grid.Row="0" Grid.Column="2"
-                                   Text="Estadia "/>
+                    <Button Text="Voltar"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#4A90E2"
+                            TextColor="#FFFFFF"
+                            CornerRadius="10"
+                            HeightRequest="50"/>
 
-                            <Label Grid.Row="1" Grid.Column="0"
-                                   Text="{Binding  DataCheckin, StringFormat='{}{0:dd/MM/yyyy}' }"/>
-                            <Label Grid.Row="1" Grid.Column="1"
-                                   Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}' }"/>
-                            <Label Grid.Row="1" Grid.Column="2"
-                                   Text="{Binding Estadia}"/>
+                </VerticalStackLayout>
 
-                        </Grid>
+            </Frame>
 
-                    </VerticalStackLayout>
-                    
-                </Frame>
-                <Button Text="Voltar"
-                        Clicked="Button_Clicked"/>
-            </VerticalStackLayout>
-            
-        </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 
-    </VerticalStackLayout>
 </ContentPage>
